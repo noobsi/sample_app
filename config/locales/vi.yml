@@ -100,6 +100,10 @@ vi:
       delete_fail: "Xóa người dùng thất bại"
     update:
       update_success: "Cập nhật người dùng thành công!"
+    following: "Following"
+    follower: "Follower"
+    follow: "Theo dõi"
+    unfollow: "Bỏ theo dõi"
 
   errors:
     title: "Loi form"
@@ -139,6 +143,7 @@ vi:
     title: "Thiết lập mới mật khẩu"
     click_link: "Để thiết lập lại mật khẩu của bạn hãy truy cập vào link dưới đây:"
     link_expire: "Đường link sẽ hết hạn sau 2 tiếng"
+    info: "Nếu bạn không yêu cầu thiết lập lại mật khẩu thì vui lòng hãy bỏ qua thư này!"
   micropost:
     title: "Bài đăng"
     post_time: "Được đăng %{time} trước"
