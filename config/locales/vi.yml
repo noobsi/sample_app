@@ -7,6 +7,7 @@ vi:
     error_messages:
       message: "Form của bạn có "
       error: " lỗi"
+      view: "Xem hồ sơ của tôi"
 
   static_pages:
     home:
@@ -101,6 +102,8 @@ vi:
       update_success: "Cập nhật người dùng thành công!"
 
   errors:
+    title: "Loi form"
+    text: "Xem loi ben duoi"
     format: "%{message}"
 
   sessions:
@@ -136,4 +139,13 @@ vi:
     title: "Thiết lập mới mật khẩu"
     click_link: "Để thiết lập lại mật khẩu của bạn hãy truy cập vào link dưới đây:"
     link_expire: "Đường link sẽ hết hạn sau 2 tiếng"
-    info: "Nếu bạn không yêu cầu thiết lập lại mật khẩu thì vui lòng hãy bỏ qua thư này!"
+  micropost:
+    title: "Bài đăng"
+    post_time: "Được đăng %{time} trước"
+    delete: "Xoa micropost"
+    created: "Bài viết đã được tạo!"
+    new: "Tạo bài đăng mới.."
+    post: "Đăng"
+    feed: "Bảng tin"
+    picture_size_error: "nên bé hơn 5MB"
+    error: "Dung lượng file tối đa cho phép là 5MB. Hãy chọn file nhỏ hơn"

@@ -25,7 +25,9 @@ class UsersController < ApplicationController
   end
 
   def show
-    redirect_to root_url if @user.present? || !@user.activated?
+    redirect_to root_url unless @user.present? || @user.activated?
+    @microposts = @user.microposts.order_micropost
+                       .page(params[:page]).per Settings.micropost.paginate_per
   end
 
   def edit; end
