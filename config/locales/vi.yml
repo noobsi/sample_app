@@ -90,5 +90,7 @@ vi:
       newuser: "Thành viên mới? "
       sign_up_now: "Đăng ký ngay!"
     create:
-login_fail: "Email hoặc mật khẩu không chính xác."
-
+      login_fail: "Email hoặc mật khẩu không chính xác."
+      remember: "Nhớ tài khoản"
+    create:
+      login_fail: "Email hoặc mật khẩu không chính xác."

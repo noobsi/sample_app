@@ -93,9 +93,10 @@ en:
       newuser: "New user? "
       sign_up_now: "Sign up now!"
       signup_html: "<a href='/signup'>Register</a>"
+      remember: "Remember me"
     create:
       login_fail: "Invalid email/password combination."
     user:
       label:
         email: "Email"
-password: "Password"
+        password: "Password"
