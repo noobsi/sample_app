@@ -2,6 +2,7 @@ source "https://rubygems.org"
 
 gem "bcrypt", "3.1.12"
 gem "bootstrap-sass", "3.3.7"
+gem "carrierwave"
 gem "coffee-rails", "4.2.2"
 gem "config"
 gem "faker"
@@ -9,6 +10,7 @@ gem "figaro"
 gem "jbuilder",     "2.7.0"
 gem "jquery-rails", "4.3.1"
 gem "kaminari"
+gem "mini_magick"
 gem "puma", "3.9.1"
 gem "rails", "5.2.0"
 gem "sass-rails", "5.0.6"
@@ -36,6 +38,7 @@ group :test do
 end
 
 group :production do
+  gem "fog"
   gem "pg", "0.20.0"
 end
 
