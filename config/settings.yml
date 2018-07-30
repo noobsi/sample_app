@@ -5,3 +5,4 @@ user_setting:
   password_minimum_length: 6
   gravatar_size: 50
   paginate_per: 3
+  password_reset_expired: 2
