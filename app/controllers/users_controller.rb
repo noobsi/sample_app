@@ -5,8 +5,8 @@ class UsersController < ApplicationController
   before_action :admin_user, only: :destroy
 
   def index
-    @users = User.where(activated: true).order(:name)
-                 .page(params[:page]).per Settings.paginate_per
+    @users = User.order_user.page(params[:page])
+                 .per Settings.user_setting.paginate_per
   end
 
   def new
@@ -28,6 +28,9 @@ class UsersController < ApplicationController
     redirect_to root_url unless @user.present? || @user.activated?
     @microposts = @user.microposts.order_micropost
                        .page(params[:page]).per Settings.micropost.paginate_per
+    @build_relationship = current_user.active_relationships.build
+    @find_relationship = current_user.active_relationships
+                                     .find_by followed_id: @user.id
   end
 
   def edit; end
@@ -51,14 +54,6 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit :name, :email, :password,
       :password_confirmation
-  end
-
-  def find_user
-    @user = User.find_by id: params[:id]
-
-    return if @user
-    flash[:danger] = t ".cannot_find_user"
-    redirect_to root_url
   end
 
   def logged_in_user

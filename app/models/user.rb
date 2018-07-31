@@ -12,8 +12,15 @@ class User < ApplicationRecord
     length: {minimum: Settings.user_setting.password_minimum_length}
   has_secure_password
   has_many :microposts, dependent: :destroy
+  has_many :active_relationships, class_name: Relationship.name,
+   foreign_key: :follower_id, dependent: :destroy
+  has_many :passive_relationships, class_name: Relationship.name,
+   foreign_key: :followed_id, dependent: :destroy
+  has_many :following, through: :active_relationships, source: :followed
+  has_many :followers, through: :passive_relationships, source: :follower
   before_save :downcase_email
   before_create :create_activation_digest
+  scope :order_user, ->{where(activated: true).order created_at: :desc}
 
   def remember
     @remember_token = User.new_token
@@ -72,7 +79,19 @@ class User < ApplicationRecord
   end
 
   def feed
-    microposts
+    Micropost.feed_microposts id
+  end
+
+  def follow other_user
+    following << other_user
+  end
+
+  def unfollow other_user
+    following.delete other_user
+  end
+
+  def following? other_user
+    following.include? other_user
   end
 
   private

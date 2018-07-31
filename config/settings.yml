@@ -4,10 +4,11 @@ user_setting:
   email_maximum_length: 255
   password_minimum_length: 6
   gravatar_size: 50
+  gravatar_size_preview: 30
   paginate_per: 10
   password_reset_expired: 2
 micropost:
   content_maximum: 140
   picture_size: 2
   picture_resize: 400
-  paginate_per: 5
+  paginate_per: 16
